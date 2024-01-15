@@ -1,0 +1,44 @@
+
+ 'package.json'
+
+    Arquivo descritor de um projeto em Node;
+    Descrição de todas dependencias que seu projeto precisa;
+    
+   
+
+    No terminal: 
+    
+        - Acessar a pasta referente.
+        - Executar o comando 'npm init'
+            - 'npm init' habilita um local de definição com:
+
+                package name:       nome do projeto
+                version:            te da a versão
+                description:        descrição do projeto
+                entry point:        por padrão index.js (pode mudar)
+                test commando:      comando para teste
+                git repository:     repositorio do projeto
+                keywords:           palavras-chave
+                author:
+                license:
+
+            npm init -y
+
+                responde sim para todas as perguntas acima
+                automaticamente cria o arquivo package.json
+
+
+                Rodando o 'npm i' para instalar uma biblioteca.
+                        
+                        - vai criar uma pasta node_module.
+                        - na mesma pasta em que está executando o comando;
+                        - vai criar dentro de 'funcionarios'
+                        - se executar o terminal nessa pasta
+
+
+            npm i --save nomeDaBiblioteca
+
+                - além de instalar a biblioteca na pasta node_modules
+                    vai criar uma área para colocar as depemdências do 
+                    seu projeto dentro do 'package.json'
+

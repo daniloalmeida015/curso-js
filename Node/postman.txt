@@ -1,0 +1,6 @@
+POSTMAN
+
+Para testar a aplicação.
+
+Fazer requisioes Get, Post.
+

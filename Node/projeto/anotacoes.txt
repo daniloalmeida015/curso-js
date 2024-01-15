@@ -1,0 +1,11 @@
+
+Projeto:
+
+    No terminal:
+        Entrar na pasta do Projeto
+        Inicializar o arquivo 'package.json'
+            npm init -y
+
+        Instalar o Express
+            npm i --save express@4.16.2 -E
+            (instalar a versão exata)

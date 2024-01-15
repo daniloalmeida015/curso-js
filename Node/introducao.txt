@@ -1,0 +1,53 @@
+
+O Node. js é a ferramenta que vai nos entregar a capacidade de interpretar código JavaScript, de maneira bem similar ao navegador.
+Quando executamos um comando escrito em JavaScript, o Node. js interpreta esse comando e faz a sua conversão para a linguagem de
+máquina a ser executada pelo computador.
+
+Node: Ambiente de execução do JavaScript do lado do Servidor;
+
+
+
+##  SISTEMA DE MÓDULOS
+
+    - PADRÃO LAYERS
+        - DIVISÃO EM CAMADAS    
+        - Cada camada com sua responsabilidade.
+        - Em Node, um arquivo representa um modulo.
+        - Tudo escrito dentro do modulo fica visivel apenas dentro dele.
+        - para tornar disponível/público para outro arquivo
+            - precisa Exportar/importar
+
+
+##  Divisão de uma aplicação em javascript?
+
+    FrontEnd (rodando no Browser)
+        - vários arquivos
+        - concatenados quando vai jogar para produção
+            - em 1 arquivo ou poucos arquivos
+            - lido e interpretado no browser
+
+    BackEnd (usando Node como runTime)
+        - organizado em pastas e arquivos
+        - cada arquivo representa um modulo
+        - não precisa compactar
+        - executa no Servidor
+        - o que são enviados como resposta de uma requisição, normalmente, são dados no formato JSON
+
+
+
+##  usando o Node como servidor, ele pode funcionar como o Apache
+        - pode ser um servidor Web
+        
+        - provendo: 
+            - página
+            - arquivo
+            - video
+            - imagem
+            - gerar conteudo dinamico
+
+        - pode servir como API do seu sistema
+
+
+    ## Em Node 1 arquivo representa um modulo #########################
+
+        - múdulo tem

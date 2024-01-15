@@ -1,0 +1,77 @@
+
+Instalando pacotes no Node via terminal:
+
+No terminal:
+ 
+    npm i 'nome da biblioteca'    
+        
+        -> vai instalar a biblioteca.
+        -> cria a pasta node_modules dentro da pasta que executou no terminal
+        -> ao executar cria uma nova pasta: 'node_modules' e dentro dela instala as bibliotecas
+
+    ## BIBLIOTECA LODASH
+
+        npm i lodash    
+
+            -> vai instalar a biblioteca 'lodash'.
+            Vai ficar dentro de 'node_modules'
+
+    Lodash é uma biblioteca JavaScript que fornece funções utilitárias para tarefas comuns de programação 
+    usando o paradigma de programação funcional
+    
+ao mandar o projeto para o GitHub, não faz sentido mandar a pasta 'node_modules' que pode ser muito grande
+
+- para isso, criar o arquivo .gitignore
+
+
+## instalando a biblioteca de forma global
+
+
+    npm i -g nodemon
+
+    O que é o nodemon? O nodemon é um utilitário que monitora as mudanças nos arquivos do seu projeto e reinicia
+     automaticamente o servidor Node. js quando necessário. Assim, você não precisa parar e iniciar o servidor
+      manualmente a cada modificação
+
+
+
+      ### ERRO ERRO ERRO 
+
+      nodemon : O arquivo C:\Users\ti11.CAPAL\AppData\Roaming\npm\nodemon.ps1 não pode ser carregado porque a execução de scripts foi desabilitada neste sistema. 
+        Para obter mais informações, consulte about_Execution_Policies em https://go.microsoft.com/fwlink/?LinkID=135170.
+        No linha:1 caractere:1
+        + nodemon
+        + ~~~~~~~
+            + CategoryInfo          : ErrodeSegurança: (:) [], PSSecurityException
+            + FullyQualifiedErrorId : UnauthorizedAccess
+
+
+        Este erro é apenas uma medida de segurança do Windows para evitar que usuários que não são da área rodem scripts JS,
+         mas podemos autorizar o nodemon da seguinte forma:
+
+            No PowerShell -> Set-ExecutionPolicy Unrestricted
+
+
+
+
+            Nodemon: 
+
+                
+
+
+            ##########  recriar a pasta node_modules
+
+        
+        =-           entrar dentro da pasta requerida;
+                no prompt de comando
+                npm i -> ele recria todas as pastas pra você, a partir do arquivo 'package.json'
+            
+            scripts já existentes no 'package.json': basta executar com npm
+                
+                npm start
+                npm test
+                npm stop
+                npm restart
+
+            scripts NÃO existentes (criados por você) no 'package.json':
+                chamar o npm run 'nomeDoScript' no terminal para executar

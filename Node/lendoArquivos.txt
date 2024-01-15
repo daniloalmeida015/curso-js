@@ -1,0 +1,6 @@
+LENDO ARQUIVOS EM NODE
+
+    FileSystem
+
+
+    arquivo que será lido a partir do modulo file system -> 'arquivo.json'

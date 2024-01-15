@@ -1,0 +1,53 @@
+
+FRAMWORK (arcabolso):
+    Estrutura sua aplicação
+    Um framework define a estrutura do seu futuro projeto 
+    e proporciona as ferramentas necessárias que você pode
+    usar como blocos de construção.
+
+
+    React - frontend
+    Angular - frontend
+    ViewJs  - frontend
+    Express - backend
+
+Um framework é uma estrutura ou conjunto de ferramentas e convenções que fornece uma base 
+para o desenvolvimento de software. Ele oferece uma abordagem estruturada para facilitar o 
+desenvolvimento de aplicações, fornecendo um conjunto de bibliotecas, padrões e diretrizes 
+que ajudam os desenvolvedores a criar software de maneira mais eficiente e consistente.
+
+Frameworks podem ser específicos para uma linguagem de programação ou abranger várias linguagens.
+ Eles são projetados para resolver problemas comuns e fornecer funcionalidades padrão, permitindo 
+ que os desenvolvedores se concentrem em aspectos específicos da aplicação em vez de lidar com detalhes
+  de implementação repetitivos.
+
+Aqui estão alguns exemplos de frameworks populares em diferentes contextos:
+
+Frameworks Web:
+
+Django (Python): Um framework web para desenvolvimento rápido e limpo em Python.
+Ruby on Rails (Ruby): Um framework que segue o paradigma de convenção sobre configuração para 
+desenvolvimento web em Ruby.
+Express.js (JavaScript/Node.js): Um framework minimalista e flexível para construir aplicativos
+ web usando Node.js.
+
+Frameworks Front-end:
+
+React (JavaScript): Uma biblioteca para construir interfaces de usuário, desenvolvida pelo Facebook.
+Angular (JavaScript/TypeScript): Um framework desenvolvido pelo Google para a construção de aplicativos 
+web dinâmicos.
+
+Frameworks de Desenvolvimento Mobile:
+
+Flutter (Dart): Um framework da Google para criar aplicativos móveis nativos para iOS e Android.
+React Native (JavaScript): Um framework que permite o desenvolvimento de aplicativos móveis usando 
+React e JavaScript.
+
+Frameworks de Desenvolvimento de Jogos:
+
+Unity (C#): Um framework amplamente utilizado para o desenvolvimento de jogos 2D e 3D.
+Unreal Engine (C++): Um framework utilizado para criar jogos e aplicações interativas,
+ conhecido por sua capacidade gráfica poderosa.
+Estes são apenas alguns exemplos, e há muitos outros frameworks em diversas áreas do 
+desenvolvimento de software. A escolha de um framework muitas vezes depende dos requisitos 
+do projeto e das preferências da equipe de desenvolvimento.
