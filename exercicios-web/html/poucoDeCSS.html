@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Um pouco de CSS!</title>
+
+
+    <!-- Aqui os códigos CSS chamando link externo MELHOR-->
+     <link rel="stylesheet" href="poucoDeCSS.css">
+
+    <!-- Aqui os códigos CSS dentro do html-->
+    <style>
+        
+        h1{
+            /* display: none; /*none -> some da página*/
+            background-color: red;
+            position: absolute;
+            top: 400px;
+            left: 400px;
+            font-size: 50px;
+            color: aqua;
+        }
+
+        /*Classe CSS começa com ponto*/
+        .fundoVermelho{
+            background-color: #ff0000;
+        }
+
+        .negrito{
+            font-weight: bold;
+        }
+    </style>
+
+
+</head>
+<body>
+
+    <h1>CSS COM H1</h1>
+    <span id="textoPrincipal">ID</span><br><br>
+    <span class="fundoVermelho negrito">CLASSE COM FUNDO VERMELHO</span><br><br>
+    <span class="negrito">CLASSE NEGRITO</span><br><br>
+    <span class="fundoVermelho" atrib_criado>ATRIBUTO</span><br><br>
+
+    <!-- CSS dentro das tags com a propriedade 'style'-->
+    <span class="fundoVermelho" style="display: flex;">CSS DENTRO DA TAG</span><br><br>
+
+    
+</body>
+</html>
+
+<!-- query selector-->
+<!-- document.querySelector('.classe'); <!-- ponto para Classe-->
+<!-- document.querySelector('#id'); <!-- # para id-->
+<!-- document.querySelector('[atributo]'); <!-- [] para atributos criados-->
