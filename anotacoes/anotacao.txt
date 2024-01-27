@@ -1,0 +1,14 @@
+
+//site para executar js
+
+     jsfiddle.net
+   
+JSON -> Java Script Object Notation
+JSON é um formato textual
+
+
+ Objeto em java script não é a mesma coisa que JSON
+
+
+ ** Parametros e retorno em JS são opcionais
+
