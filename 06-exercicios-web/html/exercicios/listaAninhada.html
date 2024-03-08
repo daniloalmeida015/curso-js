@@ -38,11 +38,16 @@
 
 <link rel="stylesheet" href="http://files.cod3r.com.br/curso-web/tree.css">
 <script>
+
+
+    //onClick ele vai esconder os elementos
     document.querySelectorAll('[wm-folder]').forEach(folder => {
         folder.onclick = function(e) {
-            const ul = folder.nextElementSibling
-            const d = ul.style.display
-            ul.style.display = d === 'none' ? 'block' : 'none'
+            //debugger
+            const ul = folder.nextElementSibling; //pega o proximo elemento
+            //console.log(ul);
+            const displayAtual = ul.style.display
+            ul.style.display = displayAtual === 'none' ? 'block' : 'none'
         }
     })
 </script>

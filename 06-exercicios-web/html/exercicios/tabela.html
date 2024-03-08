@@ -1,13 +1,18 @@
 <table>
     <caption>Produtos</caption>
+    
+    <!-- cabeçalho -->
     <thead>
-        <tr>
+        <!-- linha -->
+        <tr> 
             <th>Produto</th>
             <th>Preço</th>
             <th>Quantidade</th>
             <th>Total</th>
         </tr>
     </thead>
+
+    <!-- corpo da tabela -->
     <tbody>
         <tr>
             <td>iPad</td>
@@ -22,8 +27,11 @@
            <td>21192,00</td>
         </tr>
     </tbody>
+
+    <!-- rodapá da tabela -->
     <tfoot>
         <tr>
+            <!-- colspan: numero de colunas ocupadas -->
             <td colspan="3">Total</td>
             <td>37637,00</td>
         </tr>
@@ -43,6 +51,7 @@
        border-bottom: solid 3px #444; 
     }
 
+    /* mouse por cima do tr dentro do tbody : hover */
     tbody tr:hover {
         background-color: #dedede;
     }
