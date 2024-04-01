@@ -16,6 +16,7 @@
         Exercicios HTML
     </header>
 
+    <!-- BARRA DE NAVEGAÇÃO -->
     <nav>
         <a href="exercicios/teste.html">00 - Teste </a>|
         <a href="exercicios/texto1.html">01 - Texto 1</a>|
@@ -30,6 +31,10 @@
 
         <a href="exercicios/tabela.html">06 - Tabela</a>|
         <a href="exercicios/form/form.html">07 - Formulario</a>|
+        <a href="exercicios/imagens.html">08 - Imagens</a>|
+        <a href="exercicios/video.html">09 - Videos</a>|
+        <a href="exercicios/tagsNaoVisuais.html">10 - Tags não visuais</a>|
+
     </nav>
 
     
@@ -106,7 +111,7 @@
               console.log('Ação');
               
               //requisição ajax
-                  fetch(link.getAttribute('wm-nav'))  //aqui eu pedo o atributo criado
+                  fetch(link.getAttribute('wm-nav'))  //aqui eu pego o atributo criado
                       .then(resp => resp.text()) //.text() -> uma função que pega o conteudo html da pag que eu fiz a requisição
                       .then(html => conteudo.innerHTML = html); //innerHtml joga o conteudo dentro de documento
 
