@@ -4,8 +4,31 @@
 <head>
     <meta charset="UTF-8">
     <title>Herança</title>
+
+    <!-- FONTE DO GOOGLE -->
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+
     <style>
-        /* ... */
+        
+        /* Algumas propriedades são transmitidas, por padrão, por herança e outras não */
+
+        body{
+            font-family: "Oswald", sans-serif;  /* transmitido por herança  */
+            font-size: 40px;                    /*transmitido por herança*/
+
+            border: solid 3px red;            /*NÃO é transmitido por herança*/
+            padding: 50px 10px;                      /*NÃO é transmitido por herança*/
+        }   
+
+
+        /* INHERIT: informa que vai ser herdado essa propriedade, já que border e padding não são passados por herança,
+        usando o INHERIT vai forçar isso */
+        div{
+            border: inherit;
+            padding: inherit;
+        }
+
+       
     </style>
 </head>
 
