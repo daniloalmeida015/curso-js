@@ -5,9 +5,18 @@
     <meta charset="UTF-8">
     <title>Altura e Largura</title>
     <style>
+
+        html{height: 100%;} 
+        /*
+        se eu quiser que o body tenha por padrão 100% da tela, tenho que aumentar
+        o tamanha do pai (html)    
+        */
+
         body {
             font-size: 40px;
             background-color: coral;
+            height: 100%;
+            margin: 0;
         }
 
         div {
@@ -16,6 +25,25 @@
 
         span {
             background-color: dodgerblue;
+        }
+
+        span, div{
+            width: 50%; /* SÓ VAI FUNCIONAR NA DIV que é display: blobk*/
+            
+            /* height em %: não vai fazer diferença nenhuma.
+            pois é relativo ao componente do pai (body) e o 
+            BODY tem altura da soma dos elementos dentro dele. 
+            Então não faz diferença */
+            
+            height: 250px;
+            /* 
+            height usando tamanho absoluto (px): vai funcionar na div que é block.
+            Como coloquei unidade absoluta de tamnho, que éo px, o body aumentou conforme
+            os elementos nele*/
+            
+            /* O WIDTH vai funcionar com o %, pois, por padrão o BODY ocupa o tamanho da tela */
+            height: 50%;
+            display: block;
         }
     </style>
 </head>

@@ -5,7 +5,44 @@
     <meta charset="UTF-8">
     <title>Unidades #01</title>
     <style>
-        /* ... */
+        /* UNIDADES DE MEDIDAS ABSOLUTAS.
+        
+            PIXEL PX
+            CENTIMETROS CM
+            ... */
+        
+            .unidades-absolutas{
+            position: absolute;
+            font-size: 40px;
+            padding: 20px;
+            border: solid 5px #222;
+            margin: 30px;
+            width: 4cm; /*CM POUCO USADO*/ 
+            height: 20mm; /*mm pouco usado*/
+
+            top: 150px; /*DISTANCIA DO TOPO DA PAGINA*/
+            left: 200px;   /*DISTANCIA DO lado esquerdo DA PAGINA*/
+            /* se nao tivesse usado o position: absolute não conseguiria usar o top e left */
+        }
+
+        /* UNIDADES DE MEDIDAS RELATIVAS
+        - em
+        - rem
+        -  %
+        - vw
+        */
+        .unidades-relativas{
+            position: absolute;
+            font-size: 4em;
+            padding: 5%;
+            border: solid 1vw black;
+            margin: 0.8%;
+            width: 20vw;
+            height: 15vw;
+            bottom: 5%;
+            right: 5%;
+        }
+
     </style>
 </head>
 

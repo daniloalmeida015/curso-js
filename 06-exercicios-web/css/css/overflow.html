@@ -6,9 +6,21 @@
     <style>
         div {
             font-size: 40px;
-            height: 100px;
-            width: 260px;
+            height: 150px;
+            width: 360px;
             border: solid 3px;
+
+            /* OVERFLOW: QUANDO O CONTEUDO ESTRAPOLA A MARGEM DO PAI */
+
+            /* ESTRATEGIAS PARA EVITAR O OVERFLOW: 
+            - */
+
+            overflow:hidden; /*hidden: vai esconder o que estrapolar o espaço da div*/
+            overflow: scroll; /*scroll: vai habilitar uma barra de rolagem para vertical e horizontal*/
+            overflow-x: scroll; /*scrol apenas no eixo X*/
+            overflow-y: scroll; /*scrol apenas no eixo Y*/
+
+
         }
     </style>
 </head>
@@ -20,3 +32,5 @@
     </div>
 </body>
 </html>
+
+<!--  -->

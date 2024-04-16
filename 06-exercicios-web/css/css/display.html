@@ -5,7 +5,63 @@
     <meta charset="UTF-8">
     <title>Display</title>
     <style>
-        /* ... */
+        /* DISPLAY: 
+        - none: deixar invisível
+        - flex: usar o flexbox
+        - grid: usar cssgrid
+        - inline:
+        - block: 
+        -  */
+
+
+        body{
+            font-size: 40px;
+            color: #fff;
+            background-color: coral;
+        }
+
+        ul{ padding: 0;}
+        div{background-color: seagreen;}
+        span{background-color: dodgerblue;}
+        li{background-color: purple;}
+
+        div, span, li{
+            width: 50%;
+            width: 200px; 
+            height: 80px;    
+            /* width e heigh: só aplica na div e li 
+            No span não aplicou*/
+
+            padding-top: 30px;
+            /* funciona nos 3 */
+
+            text-align: center;
+
+            /* DISPLAY: 
+            - DIV: padrão BLOCK
+            - SPAN: padrão INLINE 
+            - UL: padrão BLOCK
+            - LI: padrão list-item*/
+
+            display: block;
+            /* DISPLAY:   - BLOCK: cada elemento tem sua própria linha. */
+            
+            display: inline;
+            /* DISPLAY:  - INLINE: elemntes ficam na mesma linha*/
+            
+             display: inline-block;
+            /* DISPLAY:  - INLINE-BLOCK: mantem os itens na mesma linha e permite 
+            mudar altura e largura.
+            
+            Bom para construir cards view
+            Bom para usar para construir menu, usando o li*/
+
+
+             
+        }
+
+
+
     </style>
 </head>
 

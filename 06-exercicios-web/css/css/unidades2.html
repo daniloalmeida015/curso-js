@@ -5,6 +5,25 @@
     <title>Unidades #02</title>
     <style>
         /* ... */
+        .fora{
+            position: relative;
+            background-color: orange;
+            width: 400px;
+            height: 400px;
+            padding: 50px;
+        }
+
+        .dentro{
+            background-color: mediumvioletred;
+            height: 100px;
+            width: 100%;
+            /* POSITION STATIC é a position PADRÃO*/
+            position: static; /*o width vai ocupar 100% do conteudo*/
+            position: relative; /*o width vai ocupar 100% do conteudo*/
+            position: absolute; /*o width vai ocupar 100% do conteudo SOMADO COM O PADDING*/
+            position: fixed; /*o width vai ocupar 100% EM RELAÇÃO AO VIEWPORT COMPLETO*/
+        }
+
     </style>
 </head>
 <body>

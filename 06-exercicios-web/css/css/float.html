@@ -5,24 +5,45 @@
     <meta charset="UTF-8">
     <title>Float</title>
     <style>
+
+        /* #################### EVITE usar o float:
+            
+        prefira usar:
+            - flex box
+            - css grid
+        */
+
         body {
             background-color: #222;
         }
-
+        
         .c1 {
             background-color: red;
+            float: right;
         }
 
         .c2 {
             background-color: green;
+            clear: both;
+            /* após cada float precisa dar um clear  */
+            float: left;
         }
         
         .c3 {
             background-color: blue;
+           clear: both;
+           float: right;
         }
 
         .c4 {
             background-color: orange;
+            clear: both;
+            float: left;
+        }
+
+        div{
+            height: 150px;
+            width: 150px;
         }
     </style>
 </head>
