@@ -4,12 +4,40 @@
 <head>
     <meta charset="UTF-8">
     <title>Position</title>
+
     <style>
         /* ... */
+
+        div{
+            font-size: 60px;
+            padding: 30px;
+            border: solid 5px #222;
+            /* Cada componente leva em consideração o position anterior */
+        }
+
+        .static{
+            /* position: static; é o PADRÃO */
+                top: 100px;
+                left: 100px;
+            /* top e left não vão ser consideradas de vido ao static */
+            
+            background-color: steelblue;
+        }
+
+        .fixed{
+            position: fixed;
+            bottom: 30px;
+            right: 0px;
+            background-color: tomato;
+            
+        }
+
+
     </style>
 </head>
 
 <body>
+
     <div class="static">Static (Padrão)</div>
     <div class="fixed">Fixed</div>
     <div class="relative1">Relative</div>

@@ -16,6 +16,65 @@
             flex-direction: column;
             align-items: center;
         }
+
+        p{
+            /* Valores padrões */
+                font-size: 1em;
+                font-size: 100%;
+                font-size: 16px;
+                font-size: 12pt;
+
+            /* unidades absolutas  */
+                font-size: 100px; /*pixel*/
+                font-size: 72pt; /*pontos*/
+                font-size: 1in; /*polegadas*/
+
+            /* UNIDADES RELATIVAS */
+                font-size: 2em; /*relativo ao pai (fonte mais procima)*/
+                font-size: 2rem; /*relativo ao HTML*/
+                font-size: 10vw; /**/
+
+                /*MONOSPACE todas as letras ocupam mesmo espaçamento  */
+                font-family: monospace;
+                font-family: Georgia, serif;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                
+                /* FONTE IMPORTADO DO GOOGLE FONTS  */
+                font-family: 'Indie Flower', cursive;
+
+                font-weight: 900; /*peso da fonte*/
+                font-style: italic;
+                text-transform: uppercase;
+                /* text-decoration: overline underline; */
+                word-spacing: 10px; /* espaço entre as palavras*/
+                letter-spacing: 20px; /* espaço entre as letras*/
+                line-height: 2.5em; /*altura da linha*/
+                text-align: center;
+
+        }
+
+
+        /* transformando o link em botão */
+        .botao{
+            font-size: 28px;
+            text-decoration: none;
+            padding: 10px 30px;
+            border-radius: 25px;
+        }
+
+        .destaque{
+            color: #fff;
+            background: tomato;
+            box-shadow: 2px 2px 1px 1px #000;
+        }
+
+        .destaque:active{
+            box-shadow: none;
+        }
+
+        .destaque:hover{
+            box-shadow: 2px 2px 2px 2px black;
+        }
     </style>
 </head>
 
