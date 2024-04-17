@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+   
     <title>Media Query</title>
     <style>
+        
         div {
             font-size: 40px;
             margin: 20px;
@@ -12,6 +15,42 @@
             border: solid 5px;
             display: none;
         }
+
+
+        /*    #######      MEDIAQUERY 
+            
+            Uma media query consiste de um media type e pelo menos uma expressão que limita
+             o escopo das folhas de estilo usando media features, tal como largura, altura e cor.
+              Media queries, adicionadas no CSS3, deixam a apresentação do conteúdo adaptado a uma
+               gama especifica de dispositivos não precisando mudar o conteúdo em si.
+        
+        */
+        /*  definindo uma mediaQuery*/
+
+            @media (max-width: 600px) {
+                .muito-pequeno {display: block;}
+                /* se a largura do viewport for no max 600px, 
+                vai usar do display block .. assim vai mostrar */
+            }
+
+            /* quando tiver no max 1000px OU OU OU OU OU OU estiver no modo retrato */
+            @media (max-width: 1000px), (orientation: portrait) {
+                .pequeno-retrato{
+                    display: block;
+                }
+            }
+
+            /* Quando estiver no intervalo entre 600 a 1000px */
+            @media (min-width: 600px) and (max-width: 1000px){
+                .intervalo{
+                    display: block;
+                }
+            }
+
+        /* obs ABRINDO VIA SERVER NÃO APARECEU*/
+
+
+
     </style>
 </head>
 <body>

@@ -25,13 +25,63 @@
         }
 
         .fixed{
+            /* o fixed vai fixalo ta posição informada, ou seja,
+            mesmo rolando na página ele se mantem fixo */
             position: fixed;
             bottom: 30px;
             right: 0px;
             background-color: tomato;
+            border-radius: 50px;
             
         }
 
+        .relative1{
+            /* RELATIVE leva em consideração o position anterior */
+            position: relative; /*relativo ao elemento anterior e não a pag*/
+            top: 5px;
+            left: 50px;
+            background-color: seagreen;
+        }
+
+
+        .absolute1{
+            /* em relação a pag como um todo */
+            position: absolute; 
+            left: 350px;
+            top: 125px;
+            background-color: violet;
+        }
+
+        .relative2{
+            position: relative;
+            left: 250px;
+            top: 2000px;
+            width: 250px;
+            height: 250px;
+            background-color: slategray;
+        }
+
+        .absolute2{
+
+            /* em relação ao elemento pai.
+            POIS o pai (div) está como relative */
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            width: 20px;
+            height: 20px;
+            background-color: orange;
+        }
+
+        .sticky{
+            
+                position: -webkit-sticky; /* vai servir pARA FUNCIONAR NO SAFARI */
+            
+                position: sticky;
+                background-color: #777;
+                top: 0; 
+            /* QUANDO CHEGAR NO PIXEL 0 DO TOP, ELE VAI FICAR PARADO NA TELA */
+        }
 
     </style>
 </head>
