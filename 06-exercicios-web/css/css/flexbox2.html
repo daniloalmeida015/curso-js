@@ -4,9 +4,64 @@
 <head>
     <meta charset="UTF-8">
     <title>Flexbox #02</title>
-    <link rel="stylesheet" href="css/tag.css">
+    <!-- <link rel="stylesheet" href="css/tag.css"> -->
+
     <style>
-        /* ... */
+        
+        div{
+            border: solid 5px dodgerblue;
+            font-size: 40px;
+        }
+
+        .flex-container div{
+            box-sizing: border-box; /*tamanho da caixa vai considerar a borda*/
+
+        }
+
+        .flex-container{
+            display: flex;
+            height: 300px;
+            width: 600px;
+
+        }
+
+        /* aplicar uma propriedade para o terceiro filho do flex container*/
+        .flex-container div:nth-child(3){
+            background-color: indianred;
+            /* ordem do item dentro do flex-box ... padrão é 0*/
+                order: 1; /*ordem > 0 para o fim*/
+                order: -1; /*ordem < 0vai para o começo*/
+                order: 0; /*padrão*/
+
+            /* alinhar ao centro */
+                align-self: center; 
+                align-self: flex-end;
+                align-self: stretch; /*padrão*/
+        }
+
+        .flex-container div{
+            width: 100px;
+
+            /* Definir a logica de como vai ocupar o espaço que fala no container */
+                /* colocando peso 1, vai dividir em mesmo tamanho pros elementos */
+                flex-grow: 1;
+                /*  */
+        }
+
+        .flex-container div:nth-child(1){
+            flex-grow: 2;
+        }
+
+        /* .flex-container{
+            width: 300px;
+            / contrario do grow .. 
+            flex-shrink: 1;
+        }
+
+        .flex-container div:nth-child(1){
+            flex-shrink: 5;
+        } */
+
     </style>
 </head>
 

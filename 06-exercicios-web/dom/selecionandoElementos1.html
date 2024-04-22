@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Selecionar Elementos #01</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body class="conteudo exercicio">
+    <div id="primeiro">#primeiro</div>
+    <div>Segundo</div>
+    <div class="terceiro ultimo">.terceiro .ultimo</div>
+    
+    
+    <script>              
+
+    /*
+        DOM (Document Object Model) Modelo de Documento do Objeto;
+        Trata-se da modelagem de todo o HTML.
+
+        A partir da sua quinta versão, o HTML até então estático, 
+        além das melhorias na estrutura e separação da semântica da
+        estilização, ganhou INTERATIVIDADE com a criação da linguagem 
+        de programação JavaScript, e é nesse momento que surge o DOM.
+    */
+
+    //selecionando elementos a partir da DOM
+        
+        //GETELEMENTS
+        document.getElementById('primeiro').classList.add('destaque');
+        // a classe 'destaque' esta dentro de css/estilo
+
+        //retorna uma lista de elementos do tipo DIV
+        //retorna um HTMLcolection
+        const divs = document.getElementsByTagName('div');
+
+        //pegar todos os elementos div, transforma em Array ..
+        //percorre cada um removendo a classe destaque
+        Array.from(divs).forEach(e => e.classList.remove('destaque'));
+
+        //FAZER UM SPREAD: outra forma de transformar um htmlcollection em array
+        const divsArray = [...divs];
+
+        divsArray.forEach(e => e.classList.add('destaque'));
+
+
+        /// selecionando a partir da classe
+        //retonra um htmlCollection
+        const ultimosElementos = document.getElementsByClassName('ultimo');
+
+        for(let e of ultimosElementos){
+            e.classList.remove('destaque');
+        }
+
+
+    </script>
+</body>
+</html>
