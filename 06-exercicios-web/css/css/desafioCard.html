@@ -6,6 +6,50 @@
     <title>Desafio Card</title>
     <style>
         /* ... */
+        .curso{
+            /* float: left; */
+            display: inline-block;
+            vertical-align: top;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            border: solid 1px #CCC;
+           box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.3);
+           height: 300px;
+           width: 260px;
+           margin: 5px 20px;
+           padding: 5px;
+        }
+
+        .curso img{
+            width: 100%;
+            max-height: 50%;
+        }
+        .curso-info{
+            padding: 10px;
+            height: 90px;
+            overflow: hidden;
+        }
+
+        .curso-info h4{
+            font-size: 1.4em;
+            font-weight: 100;
+            margin: 0;
+        }
+
+        .curso-preco{
+            float: right;
+            padding: 10px;
+        }
+
+        .preco-de{
+            text-decoration: line-through;
+            color: firebrick;
+        }
+
+        .preco-por{
+            color: green;
+            font-size: 1.4em;
+            font-weight: bold;
+        }
     </style>
 </head>
 
@@ -33,6 +77,7 @@
                 <span class="preco-por">R$50,00</span>
             </div>
         </div>
+
         <div class="curso">
             <img src="http://files.cod3r.com.br/curso-web/curso2.jpg" />
             <div class="curso-info">

@@ -22,6 +22,11 @@
 
 <body class="conteudo exercicio">
     <h1>Formulário</h1>
+
+    <!-- é necessário colocar o name dentro dos campos de entrada
+    do formulario -->
+
+
     <form name="pesquisa" action="http://www.google.com.br/search">
         <input type="text" name="q" placeholder="Digite o termo...">
         <select name="hl">
@@ -30,8 +35,21 @@
         </select>
         <button>Pesquisar</button>
     </form>
+
+
     <script>
-        // ...
+        // document.forms: traz um array de todos os forms (tipo html colection)
+        console.log(document.forms);
+        console.log(document.forms[0]); //traz o form de indice 0
+        console.log(document.getElementsByName('pesquisa')); //traz NodeList
+        console.log(document.getElementsByTagName('pesquisa')); //traz htmlCollection
+
+        console.log(document.pesquisa); //vai procurar o elemento com nome 'pesquisa'
+        console.log(document.pesquisa.q);
+        document.pesquisa.q.value = 'Linux';
+        document.pesquisa.hl.value = 'en-us';
+        console.log(document.pesquisa.hl.selectedIndex);
+
     </script>
 </body>
 

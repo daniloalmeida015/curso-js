@@ -21,8 +21,43 @@
     <div>
         <p>Fim</p>
     </div>
+
     <script>
-        // ...
+
+        function log(){
+            console.log(this);
+        }
+
+
+        // relembrando prototype
+        // facilitando pra não ficar digitando conloe.log() toda hora
+        HTMLCollection.prototype.log = log;
+        HTMLElement.prototype.log = log;
+        NodeList.prototype.log = log;
+        Node.prototype.log = log;
+
+
+
+        const lista = document.querySelector('div ul');
+        lista.parentNode.log(); //nós pai
+        lista.childNodes.log(); //nós filhos
+
+        const primeiro = lista.firstChild;
+        
+        primeiro.log();     //pegando primeor elemento
+        primeiro.nextSibling.log(); //pegando o prox irmao desse elemento
+
+        const ultimo = lista.lastChild;
+        ultimo.log();         //pegando ultimo elemento
+        ultimo.previousSibling.log(); 
+
+
+        lista.children.log();
+        lista.firstElementChild.log();
+        lista.lastElementChild.log();
+        lista.parentNode.previousElementSibling.log();
+        lista.parentNode.nextElementSibling.log();
+
     </script>
 </body>
 
