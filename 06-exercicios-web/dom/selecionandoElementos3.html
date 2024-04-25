@@ -23,10 +23,15 @@
 <body class="conteudo exercicio">
     <h1>Formulário</h1>
 
-    <!-- é necessário colocar o name dentro dos campos de entrada
+    <!-- é necessário colocar o NAME dentro dos campos de entrada
     do formulario -->
 
 
+    <!-- VAI FAZER UM ACTION EM CIMA DO ENDPOINT SEARCH DO GOOGLE
+        
+        name="q" --:> query: input de pesquisa do google
+        name="hl" --:> host language: linguagem da pesquisa
+    -->
     <form name="pesquisa" action="http://www.google.com.br/search">
         <input type="text" name="q" placeholder="Digite o termo...">
         <select name="hl">
@@ -45,7 +50,7 @@
         console.log(document.getElementsByTagName('pesquisa')); //traz htmlCollection
 
         console.log(document.pesquisa); //vai procurar o elemento com nome 'pesquisa'
-        console.log(document.pesquisa.q);
+        console.log(document.pesquisa.q); // acha o input com name = pesquisa, depois o com name = q
         document.pesquisa.q.value = 'Linux';
         document.pesquisa.hl.value = 'en-us';
         console.log(document.pesquisa.hl.selectedIndex);

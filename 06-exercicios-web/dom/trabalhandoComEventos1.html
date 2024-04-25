@@ -9,9 +9,54 @@
 
 <body class="conteudo exercicio">
     <div>
-        <a href="https://google.com.br">Google</a>
+        <!-- usando o onclick direto no href para chamar a função 
+        
+            NÃO É muito interessante. Fica explicito e de dificil manutenção...
+            o melhor é pegar o elemento no script, com um querySelector por exemplo
+
+        -->
+        <!-- <a href="https://google.com.br" onclick="navegarEm5s(event)">Google</a> -->
+        
+        <!-- espera-um-pouco é um atributo personalizado. -->
+        <a espera-um-pouco href="https://google.com.br">Google</a>
+
+
     </div>
+
     <script>
-        // ...
+        // ...EVENTOS:
+            // QUAL O PADRÃO DE PROJETO MAIS UTILIZADO NA WEB?
+            // Padrão Observer: 
+            // java Script é fortemente baseado no padrão observer
+
+        
+        function navegarEm5s(evento){
+
+            evento.preventDefault(); //prevenir que o comportamento padrão ocorra
+            console.log('Saindo em 5s');
+
+            //target: elemento html que disparou o evento
+            //window.location.href
+            setTimeout(() => {
+
+                const link = evento.target;
+                //substituindo o endereço na barra de endereço do browser
+                window.location.href = link.href
+
+                //5000 miliseguns = 5s
+            }, 5000);
+        }
+
+        // solução para usar o onClick
+        // const a = document.querySelector('a');
+        // a.onclick = navegarEm5s
+
+        // ou, posso criar um atributo personalizado
+
+        const a = document.querySelector('[espera-um-pouco]');
+        a.onclick = navegarEm5s;
+
+
     </script>
+
 </body>

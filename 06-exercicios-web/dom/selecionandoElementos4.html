@@ -24,39 +24,39 @@
 
     <script>
 
-        function log(){
+        function mostrarLog(){
             console.log(this);
         }
 
 
         // relembrando prototype
         // facilitando pra não ficar digitando conloe.log() toda hora
-        HTMLCollection.prototype.log = log;
-        HTMLElement.prototype.log = log;
-        NodeList.prototype.log = log;
-        Node.prototype.log = log;
+        HTMLCollection.prototype.mostrarLog = mostrarLog;
+        HTMLElement.prototype.mostrarLog = mostrarLog;
+        NodeList.prototype.mostrarLog = mostrarLog;
+        Node.prototype.mostrarLog = mostrarLog;
 
 
 
         const lista = document.querySelector('div ul');
-        lista.parentNode.log(); //nós pai
-        lista.childNodes.log(); //nós filhos
+        lista.parentNode.mostrarLog(); //nós pai
+        lista.childNodes.mostrarLog(); //nós filhos
 
         const primeiro = lista.firstChild;
         
-        primeiro.log();     //pegando primeor elemento
-        primeiro.nextSibling.log(); //pegando o prox irmao desse elemento
+        primeiro.mostrarLog();     //pegando primeiro elemento
+        primeiro.nextSibling.mostrarLog(); //pegando o prox irmao desse elemento
 
         const ultimo = lista.lastChild;
-        ultimo.log();         //pegando ultimo elemento
-        ultimo.previousSibling.log(); 
+        ultimo.mostrarLog();         //pegando ultimo elemento
+        ultimo.previousSibling.mostrarLog(); 
 
 
-        lista.children.log();
-        lista.firstElementChild.log();
-        lista.lastElementChild.log();
-        lista.parentNode.previousElementSibling.log();
-        lista.parentNode.nextElementSibling.log();
+        lista.children.mostrarLog();
+        lista.firstElementChild.mostrarLog();
+        lista.lastElementChild.mostrarLog();
+        lista.parentNode.previousElementSibling.mostrarLog();
+        lista.parentNode.nextElementSibling.mostrarLog();
 
     </script>
 </body>

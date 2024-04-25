@@ -15,9 +15,30 @@
             <li>Copo Descartável</li>
         </ul>
     </div>
+
+
     <script>
-        // ...
+        
+        const lista = document.querySelector('#compras');
+
+        // acessar atributos personalizados através da notação ponto
+        //SOMENTE leitura
+            console.log(lista.attributes);                  //traz a lista de atributos
+            console.log(lista.attributes[0]);               //pelo indice
+            console.log(lista.attributes.destino);          //pegando pela notação ponto
+            // console.log(lista.attributes.data-urgencia);    //erro
+            console.log(lista.attributes['data-urgencia']);     //data-urgencia: somente passando nome com string
+        
+            lista.attributes.destino = 'Casa';              // por mais que não dê erro tentando alterar,
+            console.log('novo:', lista.attributes.destino); // não será feito a alteração
+
+        // ---------------------------------------------------------------------
+        
+        
+
     </script>
+
+
 </body>
 
 </html>

@@ -8,14 +8,49 @@
 </head>
 
 <body class='conteudo exercicio'>
+    
     <div>
         <a href='https://www.cod3r.com.br'>Cod3r</a>
     </div>
+
     <div id='primeiro'>
         <img src='http://files.cod3r.com.br/curso-web/logo-estreita.png' alt='logo'>
     </div>
+
     <script>
-        // ...
+    
+    // acessando atributos de um elemento
+        const elementoIMG =  document.querySelector('img');
+        console.log('getAttribute:', elementoIMG.getAttribute('src'));
+        console.log('src:', elementoIMG.src);
+        console.log('["src"]', elementoIMG['scr']);
+        console.log('alt:', elementoIMG.alt)
+        
+        // -------------------------- elemento IMG ----------------
+            console.log('Elemento "img": -----------------------');
+            console.log('NodeType: ', elementoIMG.nodeType); //NodeType 1: elemento, NodeType 2: atributo, NodeType 3: texto
+            console.log('NodeName: ', elementoIMG.nodeName); //nome do elemento, no caso IMG
+
+         // -------------------------- atributo src ----------------
+            console.log('Atributo "src" -------------------------------')
+            const src = elementoIMG.getAttributeNode('src'); // me dá o nó que representa o atributo3
+            console.log('NodeType: ', src.nodeType);
+            console.log('nodeName: ', src.nodeName);
+            console.log('nodeValue: ', src.nodeValue);
+
+        // -------------------------- elemento a (link) ----------------
+            const link = document.querySelector('a');
+            console.log('Elemento "a": ---------------');
+            console.log('href: ', link.href);
+            console.log('firstChield: ', link.firstChild.nodeType);
+            link.firstChild.nodeValue = "Novo texto";
+
+            link.innerHTML = 'Novo texto 2'
+
+
+
+    //
+
     </script>
 </body>
 
