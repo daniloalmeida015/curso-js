@@ -1,0 +1,8 @@
+DOM: document Object Model
+Modelo de Objeto de um Documento
+
+Representa a estrutura do documento HTML e o relacionamento entre os elementos (as tags);
+Representa o mesmo documento para que possa ser manipulado. 
+É uma representação orientada a objetos da página da web, que pode ser modificada com uma linguagem de script como JavaScript.
+Miniatura da aula;
+Usado para manipular elementos no HTML;
