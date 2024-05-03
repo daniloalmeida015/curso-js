@@ -21,16 +21,74 @@
 </head>
 
 <body class="conteudo exercicio">
+    
+    
     <h1>Formulário</h1>
+
+
     <form name="pesquisa" action="http://www.google.com.br/search">
+
         <input type="text" name="q" placeholder="Digite o termo...">
         <select name="hl">
                 <option value="pt-br">Português (Brasil)</option>
                 <option value="en-us">Inglês (Americano)</option>
             </select>
         <button wm-submit>Pesquisar</button>
+
     </form>
+
+
+
     <script>
-        // ...
+
+
+        // ...TRABALHANDO COM 'onclick' DO FORMULÁRIO
+        const submit = document.querySelector('[wm-submit]');
+
+        submit.onclick = function(e){
+
+            //parar o comportamento padrão
+            e.preventDefault();
+
+            //pega o nó pai de e.target (no caso, o botão clicado)
+            // então seu nó pai seria o formulário
+            const formulario = e.target.parentNode;
+
+            //pegando os dados do formulario
+            const dadosForm = new FormData(formulario);
+
+            dadosForm.append('ajax', true);
+            console.log(dadosForm.get('q'));
+            console.log(dadosForm.has('hl'));
+
+
+            //formData possui um iterator
+            for(let dado of dadosForm){
+                console.log(dado);
+            }
+        }
+
+
+
+
+// // FAZENDO O MESMO, MAS PARA O EVENTO ONSUBMIT
+
+//         const form = document.forms[0];
+//         form.onsubmit = function(e){
+
+//             e.preventDefault();
+//             const formulario = e.target;
+//             const dadosForm = new FormData(formulario);
+
+//             dadosForm.append('ajax', true);
+//             console.log(dadosForm.get('q'));
+//             console.log(dadosForm.has('hl'));
+
+//             for(let dado of dadosForm){
+//                 console.log(dado);
+//             }
+//         }
+
+
     </script>
 </body>

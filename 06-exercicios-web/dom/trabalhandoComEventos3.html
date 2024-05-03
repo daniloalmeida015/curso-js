@@ -43,9 +43,70 @@
         <div class="item">3</div>
         <div class="item">4</div>
     </div>
+
     <div class="direita" wm-dropzone></div>
+
     <script>
-        // ...
+
+        // ...DRAG AND DROP -- ARRASTAR E SOLTA: pegar um elemento e arrastar para o outro lado
+
+            // selecionando todas as 'divs' com a classe 'item' dentro de '[em-dropzone]'
+            const itens = document.querySelectorAll('[wm-dropzone] .item');
+
+            /*  Fazer um foreach PARA CADA item (div)
+                Pegar o proprio item e o seu indice */
+            itens.forEach((item, indice)=>{
+
+                //transformando o item em um elemento que pode ser Arrastado (DRAGGABLE)
+                item.draggable = true;
+
+                //verifica se o item possui id, 
+                //  se sim: pega ele, 
+                //  se não: adiciona um id 
+                //  No caso: vai ficar como id="draggable-item-1" ... id="draggable-item-2" ... etc
+                item.id = item.id || `draggable-item-${indice}`;
+
+                // associando o evento 'onDragStart' (evento de 'arrastarElemento')
+                item.ondragstart = e => {
+                    // dentro do evento setar uma PROPRIEDADE chamada 'dataTransfer'
+                    // e.target.id: vai pegar o 'id' do elemento clicado e setar em item
+                    e.dataTransfer.setData('item-id', e.target.id);
+                }
+            })
+
+
+            //dropzone é a parte da tela onde vai receber os elementos a ser arrastado
+            // as duas divs estão marcadas com a propriedade criada 'wm-dropzone'
+            const dropzones = document.querySelectorAll('[wm-dropzone]');
+        
+        //para cada zona
+        dropzones.forEach(dropzone => {
+
+            //previne o evento ondragover
+            dropzone.ondragover = e => e.preventDefault();
+
+            //tratar o evento onDrop (ao soltar)
+            dropzone.ondrop = function(e){
+                
+                const id = e.dataTransfer.getData('item-id');
+                
+                //  vai pegar o 'id' do elemento 
+                const item =document.getElementById(id);
+
+                //e.target: o local em que eu estiver soltando o elemento
+                //adiciona o item com filho
+                // nesse cao, se eu soltar na div, ela fica dentro da div
+                e.target.appendChild(item);
+
+
+                // se eu não quiser que aconteça, e que somente fique dentro da dropzone?
+                //  dropzone.appendChild(item);
+            }
+
+        })
+
+
+
     </script>
 </body>
 

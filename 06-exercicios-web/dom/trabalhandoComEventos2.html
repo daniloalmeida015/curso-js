@@ -9,7 +9,40 @@
 
 <body class="conteudo exercicio">
     <div>Elemento</div>
+
+
+
+
+
+
+
+
     <script>
-        // ...
+        // ... CLICAR NA DIV E PODER ARRASTÁ-LA COM O MOUSE
+            const item = document.querySelector('div');
+            item.style.position = 'absolute';
+
+            //tratar o evento 'onMouseMve'
+            item.onmousemove = evento => {
+
+                const itemClicado = evento.target;
+                itemClicado.style.cursor = 'move';
+                                
+                //verificar se está clicado: evento.buttons (fica com valor dif de 0, true)
+                if(evento.buttons){
+                    /*  evento
+                            .target : quem disparou o evento (no caso, a propria div quando clicado nela)
+                            .clientY: eixo Y
+                            clientHeight: altura da div
+
+                    */
+                    // distancia da div para o topop
+                    itemClicado.style.top = `${evento.clientY - (itemClicado.clientHeight / 2)}px`;
+                    itemClicado.style.left = `${evento.clientX - (itemClicado.clientWidth /2)}px`;
+                }
+            }
+
+
+
     </script>
 </body>
