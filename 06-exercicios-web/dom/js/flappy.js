@@ -1,3 +1,5 @@
+//const { flatMap } = require("lodash");
+
 // função para criar novo elemento
     function novoElemento(tagName, className){
 
@@ -196,13 +198,36 @@ function Passaro(alturaJogo){
 
 
 
+
+
+
+// para exibir a pontuação na tela do jogo
+function Progresso(){
+    //criando a div que vai ter o progresso
+    this.elemento = novoElemento('span', 'progresso');
+    
+    //função para atualizar os pontos
+    this.atualizarpontos = pontos => {
+        //coloca dentro do elemento o ponto
+        this.elemento.innerHTML = pontos;
+    }
+    
+    //ponto inicial
+    this.atualizarpontos(0);
+}
+
+
+
 // const barreiras = new Barreiras(700, 1200, 200, 400);
 // const passaro = new Passaro(700);
 
 // const areaDoJogo = document.querySelector('[wm-flappy]');
 
+
 // //adicionando o passaro a area do jogo
 // areaDoJogo.appendChild(passaro.elemento);
+
+// areaDoJogo.appendChild(new Progresso().elemento);
 
 // //adicionando as barreiras a area do jogo
 // barreiras.pares.forEach(par => areaDoJogo.appendChild(par.elemento));
@@ -213,7 +238,70 @@ function Passaro(alturaJogo){
 // }, 20);
 
 
-function Progresso(){
-    this.elemento = novoElemento('span', 'progresso');
-    this.atualizar
+//função para verificar colisão
+//sobreposição de elementos = colisão
+function estaoSobrepostos(elementoA, elementoB){
+    // getBoundingClientRect(): retangulo associado ao elemento, para pegar a dimensão do elemento
+    const a = elementoA.getBoundingClientRect();
+    const b = elementob.getBoundingClientRect();
+
+    // 'a' e 'b' tem todas as dimensões que preciso pra calcular se há ou não sobreposição dos elementos
+    const horizontal = a.left + a.width >= b.left && b.left + b.width >= a.left;
+    
 }
+
+
+
+
+// função que irá representar o jogo
+
+function FlappyBird(){
+    let pontos = 0;
+
+    //definindo a area do jogo
+    // no caso, pegando a div [wm-flappy]
+    const areaDoJogo = document.querySelector('[wm-flappy]');
+
+    //pegando a altura da area do jogo
+    const altura = areaDoJogo.clientHeight;
+
+    //pegando a largura da area do jogo
+    const largura = areaDoJogo.clientWidth;
+
+    // CRIANDO OS ELEMENTOS
+        //criando o progresso
+        const progresso = new Progresso();
+
+        //função notificar pontos. ++pontos, para incrementar antes de passar pra função
+        let notificarPonto = () => progresso.atualizarpontos(++pontos);
+
+        //criando as barreiras
+        const barreiras = new Barreiras(altura, largura, 200, 400, notificarPonto);
+
+        //criando o pássaro
+        const passaro = new Passaro(altura);
+
+
+    //adicionando os elementos na area do jogo
+    areaDoJogo.appendChild(progresso.elemento);
+    areaDoJogo.appendChild(passaro.elemento);
+    
+    //para cada barreira
+    barreiras.pares.forEach(par => areaDoJogo.appendChild(par.elemento));
+
+
+
+    //função start
+
+    this.start = () => {
+        //loop do jogo
+        let tempo = 20; //em milisegundos
+
+        const temporizador = setInterval(() => {
+            barreiras.animar();
+            passaro.animar();
+        }, 20);
+    }
+}
+
+new FlappyBird().start()
