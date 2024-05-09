@@ -38,6 +38,22 @@
 
     <script src="js/flappy.js"></script>
 
+    <script>
+        try {
+        // Enviar apenas o IP para o servidor
+        const response = await fetch('http://192.168.0.232:3000/flappy', {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+        });
+        
+        const ipData = await response.json();
+        console.log('IP enviado com sucesso:', ipData);
+      } catch (error) {
+        console.error('Erro ao enviar o IP:', error);
+      }
+    </script>
 
 </body>
 

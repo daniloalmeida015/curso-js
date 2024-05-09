@@ -243,14 +243,38 @@ function Progresso(){
 function estaoSobrepostos(elementoA, elementoB){
     // getBoundingClientRect(): retangulo associado ao elemento, para pegar a dimensão do elemento
     const a = elementoA.getBoundingClientRect();
-    const b = elementob.getBoundingClientRect();
+    const b = elementoB.getBoundingClientRect();
 
     // 'a' e 'b' tem todas as dimensões que preciso pra calcular se há ou não sobreposição dos elementos
-    const horizontal = a.left + a.width >= b.left && b.left + b.width >= a.left;
-    
+    const horizontal = a.left + a.width >= b.left && 
+                       b.left + b.width >= a.left;
+
+    const vertical = a.top + a.height >= b.top &&
+                     b.top + b.height >= a.top;
+
+    //retornando horizontal E vertical..
+    //somente será verdadeiro se os dois forem Verdadeiro
+    return horizontal && vertical;
 }
 
+//teste de colisãp
+function colidiu (passaro, barreiras){
+    let colidiu = false;
 
+    barreiras.pares.forEach(parDeBarreiras => {
+        //se não colidiu
+        if(!colidiu){
+            const superior = parDeBarreiras.superior.elemento;
+            const inferior = parDeBarreiras.inferior.elemento;
+
+            colidiu = estaoSobrepostos(passaro.elemento, superior) 
+                    || estaoSobrepostos(passaro.elemento, inferior);
+        }
+    })
+
+    console.log(colidiu)
+    return colidiu;
+}
 
 
 // função que irá representar o jogo
@@ -300,8 +324,13 @@ function FlappyBird(){
         const temporizador = setInterval(() => {
             barreiras.animar();
             passaro.animar();
+
+            if(colidiu(passaro, barreiras)){
+                clearInterval(temporizador);
+            }
         }, 20);
     }
 }
 
 new FlappyBird().start()
+
