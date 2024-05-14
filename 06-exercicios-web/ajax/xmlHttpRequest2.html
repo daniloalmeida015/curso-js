@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>XMLHttpRequest #02</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+    <style>
+        input[type=file] {
+            display: flex;
+            margin: 10px;
+            padding: 40px;
+            font-size: 40px;
+            background: crimson;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+
+<body class="conteudo exercicio">
+    <input type="file" name="arquivo" />
+    <div class="progresso"></div>
+
+    <script>
+        // ...
+        function ajaxUpload(configuracao){
+            const requisicaoHTTP = new XMLHttpRequest();
+
+            // SE requisicaoHTTP.upload está presente
+            if(requisicaoHTTP.upload){
+                //monitorar o progresso do upload
+                requisicaoHTTP.upload.onprogress = e => {
+                    const atual = e.loaded;
+                    const total = e.total;
+
+                    //em cima do 'atual' e do 'total' vou calcular o percentual já processado
+                    const percentual = Math.floor(atual/total*100);
+
+                    //chama a Callback
+                    configuracao.progresso({atual, total, percentual});
+
+                }
+            }
+
+            //POST: enviando informações para o servidor
+            // open(Tipo, URL, true = assincrono)
+            requisicaoHTTP.open("post", configuracao.url, true);
+
+            //
+            requisicaoHTTP.send(configuracao.formData);
+        }
+
+
+        //monitorar as mudanças no 
+        document.querySelector('input[type=file]').onchange = e => {
+            
+            const fData = new FormData();
+
+            const inputFile = e.target;
+            // e.target: o input que tem o tipo file
+            fData.append(inputFile.name, inputFile.files[0]);
+
+
+            //chama a função
+            ajaxUpload({
+                url: "upload",
+                formData: fData,
+                progresso(dados){
+                    const progresso = document.querySelector('.progresso');
+                    progresso.innerHTML = JSON.stringify(dados);
+                }
+            })
+        }
+
+
+    </script>
+</body>
