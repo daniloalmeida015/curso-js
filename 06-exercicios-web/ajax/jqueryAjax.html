@@ -15,5 +15,41 @@
 
     <script>
         // ...
+        function exibirResultado(id, dados){
+            const texto = JSON.stringify(dados);
+            document.getElementById(id).innerHTML = texto
+        }
+
+        //chamando o Jquery... referenciado a partir do '$' ou JQuery
+        //importando acima o Jquery
+        //jQuery.ajax
+        
+        //get
+        $.ajax({
+            url: 'parOuImpar',
+            data: {
+                numero: 5
+            },
+            success(data){
+                exibirResultado('get', data)
+            }
+        })
+
+
+        //post
+        $.ajax({
+            url: 'formulario',
+            method: 'post',
+            data: {
+                nome: 'João',
+                idade: 40
+            },
+            success(data){
+                exibirResultado('post', data)
+            },
+            error(e){
+                exibirResultado('post', e)
+            }
+        })
     </script>
 </body>

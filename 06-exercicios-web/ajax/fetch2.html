@@ -22,13 +22,65 @@
 
 <body class="conteudo exercicio">
     <h1>Formulário Via Fetch</h1>
+
     <form name="usuarioForm" action="formulario" method="post">
         <input type="text" name="nome" placeholder="Nome..." />
         <input type="text" name="sobrenome" placeholder="Sobrenome..." />
         <button>Salvar</button>
     </form>
+
     <div id="resultado"></div>
+
+
+
     <script>
-        // ...
+
+        // ... pegando o formulario pelo atributo 'name', no caso o 'usuarioForm'
+        // onsubmit: intercepta a submissão do formulario
+        document.usuarioForm.onsubmit = async e => {
+            // para parar o comportamento padrão do submit
+            e.preventDefault();
+
+            const form = e.target;  //elemento que disparou o evento
+            const data = new FormData(form);    //pega todos os dados preenchidos no formulario
+
+            //exemplo de adição
+            data.append('ajax', true)
+
+            // criando um objeto 'options' com algumas configurações
+            const options = {
+                method: form.method,                // form.methos pega do formulario o metodo (post no caso)
+                body: new URLSearchParams(data)     //dados do formulario que irão na submissão
+            }
+
+            //form.action: é o action do formulario. No caso é a url que eu quero disparar
+            const url = form.action;
+            
+            const resultado = document.getElementById('resultado');
+
+            //USANDO fetch retorna uma 'promisse'
+            // fetch(url, options)
+            //     .then(resp => resp.json())
+            //     .then(json => {
+            //         resultado.innerHTML = JSON.stringify(json)
+            //     })
+            //     .catch(e => {
+                    
+            //         resultado.innerHTML = e;
+            //     })
+
+            // USANDO  await
+
+                try {
+                    const resp = await fetch(url, options);
+                    const json = await resp.json();
+                    resultado.innerHTML = JSON.stringify(json);
+
+                } catch (e) {
+                    resultado.innerHTML = e;
+                }
+
+        }
+
     </script>
 </body>

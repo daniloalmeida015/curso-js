@@ -11,6 +11,70 @@
     <h1>Estados</h1>
 
     <script>
-        // ...
+        // ... criando uma função chamada ajax
+        function ajax(config){
+
+            const xhr = new XMLHttpRequest();
+            xhr.open(config.metodo, config.url, true);
+
+            //usar o evento 'onreadystatechange': sempre que o status da requisição mudar
+            xhr.onreadystatechange = e => {
+
+                //readyState
+                // 0: não inicializado
+                // 1: conexão estabelecida
+                // 2: requisição recebida
+                // 3: processando requisição
+                // 4: requisição finalizada
+
+                // se a requisição estiver concluida (4)
+                if(xhr.readyState === 4){
+                    //status 200 = sucesso
+                    if(xhr.status == 200){
+                        //chama a função de sucesso
+                        config.sucesso(xhr.responseXML);
+                    } else if(xhr.status >= 400){   //status 400 = erro
+                        //chama a função de erro
+                        config.erro({
+                            codigo: xhr.status,
+                            texto: xhr.statusText
+                        });
+                    }
+                }
+            }
+
+            //enviar requisição do tipo get
+            xhr.send();
+
+        }
+
+
+        //chamando a função ajax, passando um objeto
+        ajax({
+            url: "dados/estados.xml",
+            metodo: "get",
+            sucesso(resposta){
+                const listaEstados = resposta.getElementsByTagName('estado');
+
+                //Array.from(estados) - converte a listaEstados para array
+                //chama o reduce para transformar o array em um unico elemento no final (no caso vai ser uma string)
+                const itens = Array.from(listaEstados).reduce(
+
+                    //html é o acumulador
+                    //formado por elementos do tipo 'li', com valor dentro do nome dos estados
+                    // inicialmente o reduce começa com uma string vazia ''
+                    //e para cada iteração ele vai adicionando uma 'li'
+                    (html, estado) => html + `<li>${estado.attributes.nome.value}</li>`, ''
+                );
+
+                // antes de terminar o body,  coloca a 'ul' com todos os itens ('li') recebidos na função reduce
+                document.body.insertAdjacentHTML('beforeend', `<ul>${itens}</ul>`)
+            },
+            erro(e){
+                const msg = document.createTextNode(`${e.codigo}: ${e.texto}`);
+                document.body.appendChild(msg);
+                console.log('Errosss')
+            }
+        })
     </script>
 </body>

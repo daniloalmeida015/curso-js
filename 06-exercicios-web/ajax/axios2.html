@@ -15,5 +15,32 @@
 
     <script>
         // ...
+
+        function exibirResultado(id, dados){
+            // fazer um parse nos dados 
+            const texto = JSON.stringify(dados);
+            document.getElementById(id).innerHTML = texto;
+        }
+
+
+        const url = 'parOuImpar'
+        //requisição do tipo 'GET'
+        axios.get(url, {
+            params: {
+                numero: 8
+            }
+        }).then(resp => exibirResultado('get', resp.data))
+
+        //ou fazer assim
+        // axios('parOuImpar?numero=7').then(resp => exibirResultado('get', resp.data));
+
+
+
+        //requisição tipo POST ... usando a url 'formulario que já tem criado a roa em server.js'
+        axios.post('formulario', {
+            nome: 'Joao',
+            sobrenome: 'Silva'
+        }).then(resp => exibirResultado('post', resp.data))
+
     </script>
 </body>

@@ -1,0 +1,36 @@
+SPA significa "Single Page Application", ou Aplicação de Página Única, em português.
+É um tipo de aplicação web que funciona dentro de uma única página web, sem a necessidade de recarregar a página inteira durante o uso.
+Em vez disso, o conteúdo da página é atualizado dinamicamente, geralmente por meio de AJAX, após interações do usuário.
+
+Nas SPAs, todo o código HTML, JavaScript e CSS necessários para renderizar a aplicação é carregado uma vez, no carregamento inicial da página, 
+e subsequentemente as alterações de conteúdo são feitas manipulando o DOM (Document Object Model) através de JavaScript, geralmente em resposta 
+a eventos de navegação ou interações do usuário.
+
+Algumas das vantagens das SPAs incluem:
+
+1. **Experiência do usuário mais fluida**: 
+    Como a página não precisa ser recarregada inteiramente a cada interação, as transições entre seções da aplicação são mais suaves e rápidas.
+
+2. **Melhor desempenho percebido**: 
+    A sensação de carregamento mais rápido, uma vez que apenas partes específicas da página são atualizadas, resultando em uma experiência
+     de usuário mais responsiva.
+
+3. **Arquitetura simplificada**:
+     Geralmente, as SPAs têm uma arquitetura de código mais simples, pois todo o código relacionado à interface do usuário está concentrado
+      em uma única página.
+
+4. **Facilidade de manutenção**: 
+    Como toda a lógica de interface do usuário está em um único código base, a manutenção e atualização da aplicação pode ser mais fácil.
+
+Por outro lado, as SPAs também têm algumas desvantagens, como:
+
+1. **Problemas de SEO**:
+     Os mecanismos de busca geralmente têm dificuldade em indexar o conteúdo de SPAs, pois o conteúdo é carregado dinamicamente com JavaScript,
+     o que pode prejudicar a classificação nos resultados de pesquisa.
+
+2. **Complexidade do lado do cliente**: 
+    SPAs geralmente transferem parte da carga de processamento para o cliente, o que pode resultar em aplicativos mais pesados e complexos,
+     especialmente em termos de gerenciamento de estado e roteamento.
+
+Em resumo, as SPAs são uma abordagem moderna e popular para a construção de aplicativos web que oferecem uma experiência de usuário mais interativa
+ e responsiva, embora também possam trazer desafios únicos em termos de SEO e complexidade de desenvolvimento.

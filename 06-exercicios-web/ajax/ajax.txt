@@ -28,3 +28,17 @@ rodar o 'npm i' dentro do terminal: para instalar as dependencias
 
 criar o arquivo 'sever.js': responsavel por ter o servidor tanto para prover os dados estaticos
  quanto para prover os serviços, como para submeter formulários etc.
+ ,
+
+
+
+
+ FETCH: É uma função nativa que é usada para fazer requisições de recursos de rede, geralmente para recuperar dados de um servidor web;
+            O método fetch() é utilizado para enviar requisições HTTP assíncronas (o que significa que o código não espera pela resposta do servidor antes de continuar sua execução.)
+            Isso é útil para realizar operações de rede sem bloquear a interface do usuário ou outras partes do código.
+            Um substituto moderno para o 'xmlHTTPRequest';
+
+
+        Por exemplo, você pode usar o fetch() para solicitar dados JSON de uma API da web e, em seguida, processar esses dados quando a resposta for recebida.
+        O fetch() retorna uma Promise que resolve quando a resposta da requisição está disponível, permitindo que você trate a resposta de maneira assíncrona.
+

@@ -5,6 +5,7 @@
     <meta charset='UTF-8'>
     <title>Axios #01</title>
     <link rel='stylesheet' href='css/estilo.css'>
+    <!-- referência para o axios -->
     <script src="js/axios.js"></script>
 </head>
 
@@ -12,6 +13,17 @@
     <h1>Estados</h1>
 
     <script>
-        // ...
+        // ...AXIOS: O Axios é uma biblioteca JavaScript popular que facilita o envio de requisições HTTP assíncronas a servidores web.
+        const url = 'dados/estados.json';
+
+        axios(url).then(resp => {
+            //data: já é um objeto em js, então não precisa ser convertido como visto no caso do fetch
+            const itens = resp.data.reduce(
+                (html, estado) => html + `<li>${estado.nome}</li>`,''
+            )
+            document.body.insertAdjacentHTML('beforeend', `<ul>${itens}</ul>`)
+        })
+        
     </script>
-</body>
+</body> 
+

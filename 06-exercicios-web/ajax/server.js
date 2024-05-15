@@ -44,14 +44,13 @@ const app = express();
 
         //criar uma configuração usada par a pasta que vai salvar os arquivos e para personalizar o nome do arquivo
         const storage = multer.diskStorage({
-            destino: function(requisicao, arquivo, callback){
+
+            destination: function(requisicao, arquivo, callback){
                 callback(null, './upload'); //'./upload' pasta de destino. No caso a pasta 'upload'
             },
-            nomeArquivo: function (requisicao, arquivo, callback){
-                let dataAtual = Date.now();
-                let nomeAtual = arquivo.nomeOriginal;
-                let nomeNovo = `${dataAtual}_${nomeAtual}`;
-
+            filename: function (req, file, callback){
+       
+                let nomeNovo = `${Date.now()}_${file.originalname}`;
 
                 callback(null, nomeNovo );
             }
@@ -78,10 +77,32 @@ const app = express();
         });
 
 
+        //recebendo dados da minha página. 
+        // preciso do bodyParser já configurado acima
+        app.post('/formulario', (req, res) => {
+            //retornar os mesmos dados, em um objeto {} para a página
+            res.send({
+                ...req.body,  //... operador spread tudo que veio na requisição
+                id: 1
+            })
+        })
 
 
 
+        app.get('/parOuImpar',(req, res) => {
+            
+            //dentro do Express existe algumas formas de receber dados do frontend
+                // req.body
+                // req.query        ---> app.get('parOuImpar?numero=12'
+                // req.params       ---> app.get('parOuImpar/:parametro'
 
+            //recebendo a partir da query
+            const par = parseInt(req.query.numero) % 2 === 0;
+
+            res.send({
+                resultado: par ? 'par': 'impar'
+            })
+        })
 
 
 
