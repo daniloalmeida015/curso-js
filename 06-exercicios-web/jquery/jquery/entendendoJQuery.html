@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Entendendo jQuery</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+    <script src="js/jquery.js"></script>
+</head>
+
+<body class="conteudo exercicio">
+    <h1>Entendendo jQuery</h1>
+    <div>1</div>
+    <div>2</div>
+
+    <script>
+        //  $ é a referência para o Jquery
+        //      $.ajax //$. para chamar funções utilitarias
+        //      $() //chamar como uma função com parâmetros
+        
+        //      $(function(){   })      //posso chamar uma função
+
+        //  $('div')    //posso passar um seletor, no caso pega todas as 'divs' (conjunto de objs)
+
+        //  hide: vai esconder as 'divs' com animação em 5 segundos
+        // show(5000): vai voltar a mostrar com animação em 5s
+        //fadeout(5000): vai começando a sumir, com tempo 5s
+        $('div').hide(5000).show(5000).fadeOut(5000)
+        
+        //pega a div na posição 0 ... ou seja, a primeira
+        console.log($('div').get(0))
+
+        //saber se um objeto está vaio
+        console.log($.isEmptyObject({}));   //true
+        console.log($.isEmptyObject({nome: null})); //false
+
+        //saber se está dentro do array
+        // retorna -1 se não estiver  ... retorna o indice se estiver
+        console.log(jQuery.inArray(3, [1,2,3]));
+
+
+        // criando plugins / extender as funcionalidades
+
+        //criando uma função
+        $.fn.fundoVerde = function(){
+            this.css('background-color','green')
+            return this
+        }
+
+        //aplica o fundo verde e após 10s esconde o conteudo od body
+        $('body').fundoVerde().fadeOut(10000);
+
+
+    </script>
+</body>
