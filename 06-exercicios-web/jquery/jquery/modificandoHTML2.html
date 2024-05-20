@@ -18,5 +18,61 @@
 
     <script>
         // ...
+        $('#div1').append(', 2');
+        $('#div1').prepend('0, ');
+
+        // APPEND TO
+            $('<span>, 3</span>').appendTo('#div1')
+        // PREPPENDO TO 
+            $('<span> -1, </span>').prependTo('#div1')
+
+        // BEFORE 
+        //antes do elemento 'div2' adicione um paragrafo
+            $('#div2').before('<p>Antes 2</p>')
+
+        //AFTER
+            $('#div2').after('<p>Depois 2</p>')
+
+
+        // insertBefore e insertAfter
+            $('<p>Antes 3</p>')             //cria o elemento
+                .insertBefore('#div3')      //insere antes
+
+            $('<p>Depois 3</p>')
+                .insertAfter('#div3')
+
+
+        //envolver os paragrafos com o 'id="numerop"' com um 'div'
+       // $('p.numero')
+         //   .wrap('<div>');
+
+        //pega os paragrafos com classe 'numero' e  cria uma 'div' com um id=div4 que envolve eles
+        $('p.numero').wrapAll('<div id="div4">')
+
+        //limpa o que esta dentro de div4
+        $('#div4').empty();
+
+        //selecione a div3 e div4 e peque os anteriores e ESCONDA
+        $('#div3, #div4').prev().hide();
+
+        //selecione a div3 e div4 e peque os anteriores e remova-os
+        // $('#div3, #div4').prev().remove();
+        
+        // substitua tudo
+       // $('<div>Substituto</div>')  
+         //   .replaceAll('body > p') //todos os paragrafos que estao dentro do body
+
+
+        // $('body > p')   //seletor primeiro
+        //     .replaceWith('<div>Substituto</div>');
+
+        //replace with com callback 
+
+            $('body > p')
+                .replaceWith(function(){
+                    return $('<div>').html($(this).html()).append('!!!'); //pega do elemento atual
+                })
+
+
     </script>
 </body>

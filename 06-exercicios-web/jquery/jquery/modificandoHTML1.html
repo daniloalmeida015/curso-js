@@ -13,8 +13,49 @@
     <div id='conteudo1'></div>
     <div id='conteudo2'></div>
     <div id='conteudo3'></div>
+    <div>Sem id</div>
 
     <script>
-        // ...
+        // selecionando 'conteudo1' a partir do id
+        //adicionando elementos ao html
+        $('#conteudo1').append('<p>1</p>')
+
+        //conteudo 2
+            //criando os elementos 
+            const elementos = [
+                //criando elemento a partir do JQuery
+                $('<li></li>').append('Arroz'),
+                $('<li>').append('Feijão'),
+                    $('<li>').append('Carne')
+            ]
+
+            //criando uma lista e adicionando os 'elementos'
+            // usando o 'prepend', vai adicionar 'antes' dos elementos que já tem na 'ul'
+            const lista = $('<ul><li>Sorvete</li></ul>').prepend(elementos)
+
+            //adicionando a lista ao conteudo
+            $('#conteudo2').append(lista)
+
+        //CONTEUDO 3
+        
+            $('#conteudo3')
+                .append('<h1>1</h1>')
+                .append('<h1>2</h1>','<h1>3</h1>')
+                .prepend('<h1>0</h1>')
+
+            // HTML: substitui o conteudo do elemento selecionado
+            $('#conteudo3').html('<h1>123</h1>')
+
+            // coloca o texto informado no elemento..
+            // entende tudo como texto, e não diferencia o html
+            // neste caso ele vai realmente colocar '<h1>123</h1>' dentro do elemento
+            $('#conteudo3').text('<h1>123</h1>')
+
+
+            //alterando TODOS
+            // todas as 'divs' com a propriedade 'id'
+            $('div[id]').html('<strong>Todos!</Todfos>')
+
+
     </script>
 </body>

@@ -13,13 +13,41 @@
     <div id='conteudo'></div>
 
     <script>
-        const pessoas = [
-            { nome: 'Ana', nota: 9.1 },
-            { nome: 'Bianca', nota: 8.4 },
-            { nome: 'Carlos', nota: 7.6 },
-            { nome: 'Julia', nota: 9.7 }
-        ]
+      
         
-        // ...
+        // ...executar o script após a páginas estiver totalmente carregada a DOM
+        // assim ---->     $(document).ready(function(){
+
+        //ou assim
+        $(function(){
+
+            const alunos = [
+                { nome: 'Ana', nota: 9.1 },
+                { nome: 'Bianca', nota: 8.4 },
+                { nome: 'Carlos', nota: 7.6 },
+                { nome: 'Julia', nota: 9.7 }
+            ]
+
+            //criar const linha >> fazer um Map em alunos
+            const linhas = alunos.map(aluno => {
+                
+                //criando a coluna nome
+                const tdNome = $('<td>').html(aluno.nome);
+                //criando a coluna nota
+                const tdNota = $('<td>').html(aluno.nota)
+
+                //retornando 
+                return $('<tr>').append(tdNome).append(tdNota)
+            })
+
+            const tabela = $('<table>').append(linhas).css('border', 'solid 5px')
+
+            $('#conteudo').append(tabela)
+
+        })
+     
+
+
+
     </script>
 </body>
