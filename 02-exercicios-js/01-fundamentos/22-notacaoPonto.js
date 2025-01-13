@@ -1,15 +1,16 @@
+// A notação ponto em JavaScript é usada para acessar propriedades e métodos de objetos. 
 console.log(Math.ceil(6.1)); //arredondar
 
 const obj1 = {};
 obj1.nome = 'Bola2';
 
-//obj1['nome'] = 'Bola2';
+//obj1['nome'] = 'Bola2'; //alternativa para criação de obj
 
 console.log(obj1.nome);
 
 function Obj(nome){
 
-    this.nome = nome;
+    this.nome = nome; //THIS deixa o atributos público (visivel fora do escopo)
     this.exec = function(){
         console.log('Exec ...');
     }

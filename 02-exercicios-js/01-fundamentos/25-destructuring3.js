@@ -3,6 +3,7 @@
 
 function valorRandomico([min=0, max=1000]){
 
+    // invertendo as variaveis
     if(min > max){
         [min, max] = [max,min]; 
     }

@@ -1,0 +1,29 @@
+// FORMAS DE CHAMAR UMA FUNÇÃO EM JS
+
+function getPreco(imposto = 0, moeda = 'R$'){
+    return `${moeda} ${this.preco * (1 - this.desc) * (1+imposto)}`
+}
+
+console.log(getPreco()) //NaN porque o this não está definido para preco e desc
+
+
+
+
+const produto = {
+    nome: 'Notebook',
+    preco :4589,
+    desc: 0.15,
+    getPreco
+}
+
+//chamando a partir do obj produto
+console.log(produto.getPreco())
+
+
+// chamado a partir do Call e Apply
+
+const carro = {preco: 49990, desc:0.20}
+
+//obj carro será usado como o this dentro desta função
+console.log(getPreco.call(carro))
+console.log(getPreco.apply(carro))

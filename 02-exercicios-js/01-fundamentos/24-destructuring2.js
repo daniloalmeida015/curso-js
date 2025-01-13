@@ -1,6 +1,5 @@
 // destructuting como parâmetro de Função
 
-
 function valorRandomico ({min = 0, max = 1000}){
 
     const valor = Math.random() * (max-min) +min;
@@ -16,6 +15,6 @@ const obj = {
 console.log(valorRandomico(obj));
 console.log(valorRandomico({min:955}));
 console.log(valorRandomico({}));
-console.log(valorRandomico()); //erro
+console.log(valorRandomico()); //erro 
 
 

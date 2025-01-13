@@ -17,4 +17,6 @@
     console.log(typeof true);   //boolean
     console.log(typeof "testeString");    //string
 
+    console.log(1+1==3) //false
+
     

@@ -1,5 +1,6 @@
 let valor; //nao inicializado
 console.log(valor);
+// console.log(valor.toString()); //ERRO
 
 valor = null; //ausencia de valor
 console.log(valor);

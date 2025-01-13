@@ -12,7 +12,7 @@ const template = `
     Olá
     ${nome}!`;
 
-    console.log(concatenacao, template);
+console.log(concatenacao, template);
 
 console.log(`Soma = ${1+1}`);   //  pode-se colocar expresssoes
 

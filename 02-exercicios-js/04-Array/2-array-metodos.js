@@ -4,8 +4,8 @@
 const pilotos = ['Vettel', 'Alonso', 'Raikkonen', 'Massa'];
 
 pilotos.pop();                   // remove o ULTIMO elemento
-pilotos.push('Verstappen');      // adiciona novo elemento
-pilotos.shift();                 // remove o PRIMEIROOOO Eelemento
+pilotos.push('Verstappen');      // adiciona novo elemento NO FIM
+pilotos.shift();                 // remove o PRIMEIRO Elemento
 pilotos.unshift('Hamiltton');    // adiciona no PRIMEIRO indice
 
 

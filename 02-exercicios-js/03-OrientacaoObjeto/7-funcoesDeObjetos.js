@@ -25,7 +25,7 @@ Object.entries(pessoa).forEach(e => {
 });
 console.log('--------------------------------------------');
 
-//ou
+//ou USANDO o operador Destructuring para pegar chave e valor
 Object.entries(pessoa).forEach(([chave,valor]) =>{
     console.log(`${chave}: ${valor}`);
 })

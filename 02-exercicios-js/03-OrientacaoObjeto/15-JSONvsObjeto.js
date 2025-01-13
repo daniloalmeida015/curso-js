@@ -20,7 +20,7 @@
             }
         }
 
-//converter para JSON   - JSON.stringify(obj)
+//converter o obj para JSON   - JSON.stringify(obj)
 
         console.log(JSON.stringify(obj));
         // a funcao 'soma' foi excluida do JSON, porque JSON é um formato de dados
