@@ -1,0 +1,9 @@
+Se eu vou mandar meu projeto para o github, não faz sentido mandar
+a pasta 'node_modules', visto o tamanho e que
+ela pode ser instalada depois com o comando
+
+npm i lodash
+
+Para resolver isto, podemos criar o arquivo .gitignore
+
+e dentro dele informar a pasta que deve ser ignorada

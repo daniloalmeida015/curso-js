@@ -1,10 +1,10 @@
-/* ##  SISTEMA DE MÓDULOS
+/* ##  SISTEMA DE MÓDULOS do Node: CommonJS
 
     - PADRÃO LAYERS
         - DIVISÃO EM CAMADAS    
         - Cada camada com sua responsabilidade.
         - Em Node, um arquivo representa um modulo.
-        - Tudo escrito dentro do modulo fica visivel apenas dentro dele.
+        - Tudo escrito dentro do modulo fica visivel APENAS dentro dele.
         - para tornar disponível/público para outro arquivo
             - precisa Exportar/importar */
 
@@ -20,7 +20,8 @@
     //forma mais clássica
     module.exports.ateLogo = 'Até próximo exemplo'
 
-    /* THIS,  EXPORTS e MODULE.EXPORTS são Objetos, portanto, acima 'ola' e 'bemVindo' foram criados dentro desses objetos */
+    /* THIS,  EXPORTS e MODULE.EXPORTS são Objetos, portanto, 
+    acima 'ola' e 'bemVindo' foram criados dentro desses objetos */
 
         console.log(typeof(this));
         console.log(typeof(exports));

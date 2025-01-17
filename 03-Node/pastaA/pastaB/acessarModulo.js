@@ -9,12 +9,12 @@
                         acessarModulo.js (estou aqui)
 */
 
-    const moduloA = require('../../moduloA.js');   //respeitar o camelCase
+    const moduloA = require('../../01-moduloA');   //respeitar o camelCase
     console.log(moduloA.ola);
 
 
 //  ------------------- ACESSANDO um modulo -------------------
-//        ... no caso, criei um modulo chamado 'saudacao' e dentro dele o arquivo 'index.js'
+//        ... no caso, criei um modulo chamado 'saudacao' dentro de 'node_module' e dentro dele o arquivo 'index.js'
 //        Para acessar o modulo NÃO PRECISA colocar o caminho relativo
 //      Dentro do modulo, ele procura o arquivo 'index.js'
             const modulo = require('saudacao');
