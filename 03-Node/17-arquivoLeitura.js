@@ -1,20 +1,20 @@
 
-// fs é o modulo interno que já vem no node
+    // fs é o modulo interno que já vem no node
 
-const { isUtf8 } = require('buffer');
-const fs = require('fs');
+    const { isUtf8 } = require('buffer');
+    const fs = require('fs');
 
-const caminho = __dirname + '/arquivo.json';    //__dirname -> representa o diretorio atual
+    const caminho = __dirname + '/16-arquivo.json';    //__dirname -> representa o diretorio atual
 
-// LENDO ARQUIVO
+    // LENDO ARQUIVO
 
-    //forma SINCRONA: 
-    //  trava o eventLoop, fica parado de forma sincrona esperando 
-    //  ler o arquivo completamente para só então despachar para a proxima requisição
-    //NÃO RECOMENDADO
+        //forma SINCRONA: 
+        //  trava o eventLoop, fica parado de forma sincrona esperando 
+        //  ler o arquivo completamente para só então despachar para a proxima requisição
+        //NÃO RECOMENDADO
 
-        const conteudo = fs.readFileSync(caminho, 'utf-8');
-        console.log(conteudo);      
+            const conteudo = fs.readFileSync(caminho, 'utf-8');
+            console.log(conteudo);      
   
 
     //FORMA ASSINCRONA --- melhor

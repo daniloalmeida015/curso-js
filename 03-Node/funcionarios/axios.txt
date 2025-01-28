@@ -1,0 +1,15 @@
+O Axios é uma biblioteca JavaScript amplamente utilizada para realizar requisições HTTP. 
+Ele é baseado em promises e oferece uma maneira simples e intuitiva de se comunicar com 
+APIs, tanto no cliente (navegadores) quanto no servidor (Node.js). 
+É conhecido por sua flexibilidade, funcionalidades robustas e suporte nativo a diversos
+recursos úteis.
+
+Principais Características
+    Suporte a Promises: Torna o código assíncrono mais limpo e fácil de gerenciar.
+    Interceptors: Permite interceptar requisições ou respostas para adicionar lógica personalizada.
+    Transformação de Dados: Pode transformar os dados antes de enviá-los ou recebê-los.
+    Cancelamento de Requisições: Suporte nativo ao cancelamento de requisições.
+    Compatibilidade com Node.js: Pode ser usado no lado do servidor.
+    Headers Personalizados: Fácil configuração de cabeçalhos HTTP para autenticação, cookies, etc.
+    Suporte a Tempo de Expiração (Timeout): Define limites para requisições.
+    Suporte a Uploads e Downloads: Permite manipular progresso de uploads e downloads.

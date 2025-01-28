@@ -1,4 +1,4 @@
-/* Configurar o Express que será nosso servidor web */
+/* Configurar o Express que será nosso servidor web (FRAMEWORK WEB)*/
 
 const porta = 3003;
 
@@ -38,7 +38,8 @@ app.use(bodyParser.urlencoded({extended: true}));
         });
 
 
-        //PUT , para submeter os dados e salvar novo produto
+        //ALTERAR
+        //PUT , para submeter os dados e salvar/alterar
         app.put('/produtos/:id',(req, resp, next)=>{
             const produto = bancoDeDados.salvarProduto({
                 id: req.params.id,

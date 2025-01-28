@@ -1,7 +1,7 @@
-// ###  importando dados de outros modulos
+// ###  importando dados de outros modulos usando commonJS
 
     //REQUIRE
-    const moduloA = require('./01-moduloA.js'); //n precisa colocar a exten~sao se o arquivo for .js (padrão)
+    const moduloA = require('./01-moduloA.js'); //n precisa colocar a extensão se o arquivo for .js (padrão)
     const moduloB = require('./02-moduloB');
 
     /* usa o ./ para referenciar a pasta onde se encontra o arquivo 'moduloA'
