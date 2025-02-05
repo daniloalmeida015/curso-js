@@ -7,11 +7,40 @@ const app = express();
 const bodyParser = require('body-parser');
 const bancoDeDados = require('./bancoDeDados');
 
-/* URLENCODED: função middleware
-    o retorno dela vai ser uma função 
-    middleware que vai fazer um parser no body da requisição
-     */
+
+
+
+
+/* BODYPARSER: 
+
+    O body-parser é um middleware para Node.js usado no framework Express para processar corpos de requisição HTTP.
+    Ele é particularmente útil para lidar com dados enviados via POST, pois permite interpretar diferentes tipos de
+    conteúdo no req.body
+    
+    URLENCODEDE:
+
+    O urlencoded é um middleware usado para processar dados enviados via formulários HTML no formato 
+    application/x-www-form-urlencoded. 
+    Esse formato é comum quando os dados são enviados através de formulários HTML com o método POST.
+
+
+1)  instalar a dependência BodyParser.
+        No terminal: npm install -save body-parser
+
+2) importar o body parser
+        const bodyParser = require('body-parser');
+
+3) fazer uma requisição tipo 'use'
+    conforme abaix0, para qualquer requisição que você faça no servidor usando
+    Express, vai obrigatoriamente passar pelo bodyParser
+*/
+
+
+// 
 app.use(bodyParser.urlencoded({extended: true}));
+
+
+
 
 //requisição get
     //get(caminho, resposta)
@@ -25,7 +54,7 @@ app.use(bodyParser.urlencoded({extended: true}));
     // ao passar por exemplo http://localhost:3003/produtos/1
         app.get('/produtos/:id', (req, resp, next)=>{
             resp.send(bancoDeDados.getProduto(req.params.id));
-            //o id vem da rquisição (req)
+            //o id vem da requisição (req)
         });
 
     //post , para submeter os dados e salvar novo produto
