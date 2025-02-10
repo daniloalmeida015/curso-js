@@ -1,0 +1,28 @@
+### GRUPOS DE STATUS HTTP
+
+    Grupo 100 - Informação
+    Grupo 200 - Sucesso
+    Grupo 300 - Redirecionamento
+    Grupo 400 = Erro no Cliente
+    Grupo 500 = Erro no Servidor
+
+
+
+    ERROR 404 - Not Found
+
+    O Erro 404 é um código de status HTTP que indica que o servidor
+    não conseguiu encontrar a página ou o recurso solicitado pelo 
+    USUÁRIO
+
+    URL incorreta → O usuário digitou ou clicou em um link com um erro de digitação.
+    Página removida → O site pode ter excluído ou movido a página sem redirecionamento.
+    Erro no servidor → O servidor pode estar mal configurado ou com regras de roteamento incorretas.
+    Problemas de cache → O navegador pode estar armazenando um link antigo.
+    Domínio expirado → O site pode ter sido desativado ou movido para outro domínio.
+
+
+### AUTORIDADE CERTIFICADORA gratuita (https)
+
+    https://letsencrypt.org/pt-br/
+
+    Let’s Encrypt é uma Autoridade Certificadora gratuita, automatizada e aberta.

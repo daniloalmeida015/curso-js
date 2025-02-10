@@ -11,16 +11,24 @@ o método assíncrono retorna uma promise para fornecer o valor em algum momento
 
 */
 
+//função que recebe dois parâmetros
 function falarDepoisDe(segundos, frase){
+
+
+    // e retorna uma promessa
     return new Promise((resolve, rejeita)=>{
         
+        //simulando um tempo de processamento
         setTimeout(() => {
-            resolve(frase);
+
+            resolve(frase); //aceita um único parâmetro
             //rejeita(frase);
         }, segundos*1000);
 
     })
 }
+
+
 
 falarDepoisDe(5, 'Que legal!')
     .then(frase => frase.concat('?!?'))
