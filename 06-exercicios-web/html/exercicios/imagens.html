@@ -72,11 +72,12 @@
 </style>
 
 <script>
+
     function mover(elem, inicio, fim, passo, callback) {
         const novoInicio = inicio - passo
         if(novoInicio >= fim) {
             elem.style.left = novoInicio + 'px'
-            setTimeout(() => mover(elem, novoInicio, fim, passo, callback), 7)
+            setTimeout(() => mover(elem, novoInicio, fim, passo, callback), 15)
         } else {
             callback()
         }
@@ -89,15 +90,23 @@
     // })
 
     function slider() {
+
+        //querySelectorAll retorn um NodeList
         const elementos = document.querySelectorAll('[wm-slider] > p')
+        //transformando um NodeListe em um Array --- Array.from
         const slides = Array.from(elementos)
         exibirSlide(slides, slides[0])
     }
 
+
+    // função para exibir os slides
     function exibirSlide(slides, slide) {
+        
         slide.style.display = 'block'
 
+        //innerWidth (tamanho da tela atual)
         const inicio = innerWidth
+        //ClienteWidth é a largura do cliente, ou seja, largura da tag P
         const fim = -slide.clientWidth
 
         slide.style.left = `${inicio}px`

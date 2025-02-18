@@ -1,3 +1,5 @@
+
+// objeto cores
 const cores = {
 
     p: '#388e3c',
@@ -18,19 +20,32 @@ const cores = {
     }
 }
 
-
+// pegando todos os elementos com a classe 'tag'
 document.querySelectorAll('.tag').forEach(elemento => {
     
-    const nomeDaTag = elemento.tagName.toLowerCase();
+
+    // pegando o nome da da tag de cada elemento (tagName tras o nome do elemento) e deixando minuscula
     // se é um DIV, um P etc
-    // elemento.style.borderColor = '#616161';
+    const nomeDaTag = elemento.tagName.toLowerCase();
+    
+    // no elemento pego, aplica o borderColor
+    // com base na tag, pegando da função get dentro do objeto cores
     elemento.style.borderColor = cores.get(nomeDaTag);
 
-    
+
+    // verifica se o na lista de classes do elemento pego não contém a classe 'nolabel' nele
     if(!elemento.classList.contains('nolabel')){
-        const label = document.createElement('label');
-        label.style.backgroundColor = cores.get(nomeDaTag);;
-        label.innerHTML = nomeDaTag;
+
+        // então cria a tag 'label' (createElement)
+            const label = document.createElement('label');
+            //dentro da tag 'label' criada, coloque o background color
+            label.style.backgroundColor = cores.get(nomeDaTag);;
+
+            // dentro da tag 'label', coloca o nome da tag (pego anteriormente)
+            label.innerHTML = nomeDaTag;
+        
+        // Dentro do elemento pego, coloque essa tag criada (label)
+        // insira antes (insertBefore) do primeiro filho dentro de elemento 
         elemento.insertBefore(label, elemento.childNodes[0])
     }
 

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Tamanho Box</title>
+    <style>
+
+
+        *{
+            box-sizing: border-box;
+        }
+
+
+        /* BOX SIZING: tamando do box model */
+
+        body {
+            font-size: 45px;
+            margin: 0;
+            
+        }
+
+        div{
+            background-color: deepskyblue;
+            
+            /*  */
+            width: 100%;
+            align-content: center;
+            text-align: center;
+            height: 300px;
+            padding: 100px;
+            border: solid 20px;
+            /*
+                O TAMANHO DA DIV ULTRAPASSA A LARGURA DE 100%.
+                O WIDTH OCUPA 100%, POREM COM O PADDING/BORDER ELE VAI ULTRAPASSAR ISSO
+             */
+
+             /* COMO RESOLVER ISSO????????????
+
+             BOX-SIZING: border box: considera que o 100% engloba da borda pra dentro */
+
+              /* box-sizing: border-box; ---> posso colocar aqui, ou direto com 
+              seletor universal, como colocado acima
+              
+                *{
+                    box-sizing: border-box;
+                }
+              
+              
+              
+              */
+
+
+        }
+    </style>
+</head>
+<body>
+    <div>
+
+        <!--  -->
+        O tamanho do Box é...
+    </div>
+</body>
+</html>

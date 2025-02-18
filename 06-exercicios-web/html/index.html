@@ -16,7 +16,7 @@
         Exercicios HTML
     </header>
 
-    <!-- BARRA DE NAVEGAÇÃO -->
+    <!-- BARRA DE NAVEGAÇÃO --> 
     <nav>
         <a href="exercicios/teste.html">00 - Teste </a>|
         <a href="exercicios/texto1.html">01 - Texto 1</a>|
@@ -24,7 +24,8 @@
         <a href="exercicios/listas.html">03 - Listas</a>|
 
 
-        <!-- Posso tambem criar um atributo personalizado (no meu caso, o 'wm-nav') ao inves de usar o href .... e no script referenciar ele,-->
+        <!-- Posso tambem criar um atributo personalizado (no meu caso, o 'wm-nav') 
+         ao inves de usar o href .... e no script referenciar ele,-->
         <a href wm-nav="exercicios/listaAninhada.html">04 - Lista Aninhada</a>|
         <a href wm-nav="exercicios/links.html">05 - Links</a>|
 
@@ -82,17 +83,24 @@
     </footer>
 
     <script>
+
+
+        // Pega todos as tags 'a' que seria o link
         document.querySelectorAll('a').forEach(link=>{            //console.log(link)
 
+          //conteudo recebe o elemento com id="conteudo"
             const conteudo = document.getElementById('conteudo');
 
+            //para cada link clicado,
             link.onclick = function(e){
+
                 e.preventDefault(); //prevenir o comportamento padrão
-                console.log('Ação');
+                console.log('Ação'); //mostra "Ação" no console (abrir console do browser para testar)
                 
                 //requisição ajax
-                    fetch(link.href)
-                        .then(resp => resp.text()) //.text() -> uma função que pega o conteudo html da pag que eu fiz a requisição
+                    fetch(link.href) //pegar o valor do atributo href
+                        //.then(console.log)
+                        .then(resp => resp.text()) //.text() -> uma função que pega o conteudo html da tag que eu fiz a requisição
                         .then(html => conteudo.innerHTML = html); //innerHtml joga o conteudo dentro de documento
 
             }
