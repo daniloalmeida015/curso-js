@@ -22,7 +22,7 @@
                 flex-direction: column; 
                 flex-direction: column-reverse; 
                 flex-direction: row-reverse;
-                flex-direction: row;
+                flex-direction: row; /*propriedade padrão*/
                 
             width: 40%;
             height: 200px;
@@ -50,9 +50,10 @@
                 align-items: center; /*centralizar*/
 
             /*MAIS DE UMA LINHA*/
-            align-content: flex-end;    /*fim do container*/
-            align-content: flex-start; /*inicion do container*/
-            align-content: center; /*centralizar dentro do flex contaimer*/
+            
+                align-content: flex-end;    /*fim do container*/
+                align-content: flex-start; /*inicion do container*/
+                align-content: center; /*centralizar dentro do flex contaimer*/
         }
     </style>
 </head>
